@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://botd6krpot750"]
+[gd_scene load_steps=6 format=3 uid="uid://botd6krpot750"]
 
 [ext_resource type="Texture2D" uid="uid://bbebf3y4x2w2x" path="res://icon.svg" id="1_lx6rq"]
 [ext_resource type="Script" path="res://scripts/cards.gd" id="2_rik7w"]
@@ -9,6 +9,9 @@ script/source = "extends Node2D
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k3olv"]
 size = Vector2(133, 132)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eqpks"]
+size = Vector2(203, 196)
 
 [node name="Node2D" type="Node2D"]
 script = SubResource("GDScript_e4nr3")
@@ -23,4 +26,19 @@ script = ExtResource("2_rik7w")
 position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_k3olv")
 
+[node name="left" type="Area2D" parent="."]
+position = Vector2(101, 537)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="left"]
+position = Vector2(3, 4)
+shape = SubResource("RectangleShape2D_eqpks")
+
+[node name="right" type="Area2D" parent="."]
+position = Vector2(1041, 550)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right"]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_eqpks")
+
+[connection signal="area_shape_entered" from="cards/Area2D" to="cards" method="_on_area_2d_area_shape_entered"]
 [connection signal="input_event" from="cards/Area2D" to="cards" method="_on_area_2d_input_event"]
