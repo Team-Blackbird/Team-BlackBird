@@ -1,4 +1,4 @@
 extends Area2D
-var has_card = false
+var card = null
 var is_placeable_area = true
 var type = "normal"

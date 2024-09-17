@@ -14,5 +14,17 @@ position = Vector2(352, 200)
 [node name="placeable area2" parent="." instance=ExtResource("1_g81ut")]
 position = Vector2(344, 408)
 
+[node name="placeable area3" parent="." instance=ExtResource("1_g81ut")]
+position = Vector2(442, 408)
+
+[node name="placeable area4" parent="." instance=ExtResource("1_g81ut")]
+position = Vector2(391, 343)
+
+[node name="placeable area5" parent="." instance=ExtResource("1_g81ut")]
+position = Vector2(537, 320)
+
+[node name="placeable area6" parent="." instance=ExtResource("1_g81ut")]
+position = Vector2(594, 505)
+
 [node name="cards2" parent="." instance=ExtResource("2_sui4g")]
 position = Vector2(704, 400)
