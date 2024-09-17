@@ -13,3 +13,6 @@ position = Vector2(352, 200)
 
 [node name="placeable area2" parent="." instance=ExtResource("1_g81ut")]
 position = Vector2(344, 408)
+
+[node name="cards2" parent="." instance=ExtResource("2_sui4g")]
+position = Vector2(704, 400)
