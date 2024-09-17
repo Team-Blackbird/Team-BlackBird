@@ -88,7 +88,7 @@ func create_card_library(card_data):
 		for j in range(card_data[i].size()):
 			var info = card_data[i][j].split("&")
 			if info.size() == 3:
-				row.append(card_info.new(info[2], info[0], info[1], i, j))
+				row.append(CardInfo.new(info[2], info[0], info[1], i, j))
 			else:
 				row.append(null)
 		card_objects.append(row)
@@ -100,14 +100,32 @@ func get_language_value(i) -> String:
 
 func get_concept_value(i) -> String:
 	return concepts[i] if i in range(concepts.size()) else null
+	
+func get_language_weight_value(i, j) -> int:
+	return int(language_weights[i][j]) if i in range(languages.size()) && j in range(languages.size()) else -1
+
+func get_concept_weight_value(i, j) -> int:
+	return int(concept_weights[i][j]) if i in range(concepts.size()) && j in range(concepts.size()) else -1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	#print(card_library[randi_range(0,languages.size()-1)][randi_range(0,concepts.size()-1)])
+	#do_test_comparison()
 	pass
+
+func do_test_comparison():
+	var card1 : CardInfo = card_library[randi_range(0,languages.size()-1)][randi_range(0,concepts.size()-1)]
+	var card2 : CardInfo = card_library[randi_range(0,languages.size()-1)][randi_range(0,concepts.size()-1)]
+	var compare = null
+	if card1 != null:
+		compare = card1.compare(card2)
+	elif card2 != null:
+		compare = card2.compare(card1)
+	if compare != null:
+		print(str(card1) + "\n" + str(compare) + " = " + str(compare.calculate()) + "\n" + str(card2))
+	else:
+		print("Both cards null")
 	
-	
-class card_info:
+class CardInfo:
 	var word : String
 	var romanization : String
 	var anglishization : String
@@ -124,3 +142,25 @@ class card_info:
 		
 	func _to_string() -> String:
 		return "(" + str(language) + "," + str(concept) + "): " + word + " (" + romanization + ")" + " [" + anglishization + "], meaning " + CardLibrary.get_concept_value(concept) + " in " + CardLibrary.get_language_value(language) + "."
+	
+	func compare(card_info : CardInfo) -> PointPair:
+		if card_info == null:
+			return PointPair.new(0, 0)
+		return PointPair.new(CardLibrary.get_concept_weight_value(concept, card_info.concept), CardLibrary.get_language_weight_value(language, card_info.language))
+
+class PointPair:
+	var word_points : int
+	var language_points : int
+	
+	func _init(w, l):
+		word_points = w
+		language_points = l
+	
+	func add(point_pair : PointPair) -> PointPair:
+		return PointPair.new(point_pair.word_points + word_points, point_pair.language_points + language_points)
+	
+	func calculate():
+		return word_points * language_points
+	
+	func _to_string() -> String:
+		return str(word_points) + " x " + str(language_points)
