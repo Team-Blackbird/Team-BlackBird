@@ -89,6 +89,8 @@ func create_card_library(card_data):
 			var info = card_data[i][j].split("&")
 			if info.size() == 3:
 				row.append(card_info.new(info[2], info[0], info[1], i, j))
+			else:
+				row.append(null)
 		card_objects.append(row)
 	card_library_initialized = true
 	return card_objects
