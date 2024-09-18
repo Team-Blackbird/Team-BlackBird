@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmfwrtih5tgvl"]
+
+[ext_resource type="Script" path="res://scripts/label.gd" id="1_rw6tw"]
+[ext_resource type="PackedScene" uid="uid://bxelo41vclqw0" path="res://scenes/placeable_area.tscn" id="2_jullo"]
+
+[node name="Label" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("1_rw6tw")
+
+[node name="placeable area" parent="." instance=ExtResource("2_jullo")]
+position = Vector2(-96, 0)
+
+[node name="placeable area2" parent="." instance=ExtResource("2_jullo")]
+position = Vector2(98, 0)

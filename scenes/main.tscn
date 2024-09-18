@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://biocmi743oipl"]
+[gd_scene load_steps=4 format=3 uid="uid://biocmi743oipl"]
 
 [ext_resource type="PackedScene" uid="uid://bxelo41vclqw0" path="res://scenes/placeable_area.tscn" id="1_g81ut"]
 [ext_resource type="PackedScene" uid="uid://botd6krpot750" path="res://scenes/cards.tscn" id="2_sui4g"]
+[ext_resource type="PackedScene" uid="uid://bmfwrtih5tgvl" path="res://scenes/test.tscn" id="3_omlem"]
 
 [node name="main" type="Node2D"]
 
@@ -28,3 +29,9 @@ position = Vector2(594, 505)
 
 [node name="cards2" parent="." instance=ExtResource("2_sui4g")]
 position = Vector2(704, 400)
+
+[node name="Label" parent="." instance=ExtResource("3_omlem")]
+offset_left = 762.0
+offset_top = 155.0
+offset_right = 802.0
+offset_bottom = 178.0

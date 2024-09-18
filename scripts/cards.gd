@@ -18,11 +18,9 @@ func _physics_process(delta):
 	
 	if moving_to_fallback:
 		if position.distance_to(fallback_pos) < tolerence:
-			print("yes")
 			moving_to_fallback = false
 		else:
 			position = lerp(position, fallback_pos, 25 * delta)
-			print("no")
 
 	else:
 		if is_selected:
