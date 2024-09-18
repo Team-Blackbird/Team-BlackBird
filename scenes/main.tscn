@@ -1,37 +1,31 @@
 [gd_scene load_steps=4 format=3 uid="uid://biocmi743oipl"]
 
 [ext_resource type="PackedScene" uid="uid://bxelo41vclqw0" path="res://scenes/placeable_area.tscn" id="1_g81ut"]
-[ext_resource type="PackedScene" uid="uid://botd6krpot750" path="res://scenes/cards.tscn" id="2_sui4g"]
+[ext_resource type="Script" path="res://scripts/player_cards.gd" id="2_8r5wt"]
 [ext_resource type="PackedScene" uid="uid://bmfwrtih5tgvl" path="res://scenes/test.tscn" id="3_omlem"]
 
 [node name="main" type="Node2D"]
 
-[node name="placeable area" parent="." instance=ExtResource("1_g81ut")]
-position = Vector2(104, 408)
-
-[node name="cards" parent="." instance=ExtResource("2_sui4g")]
-position = Vector2(352, 200)
-
-[node name="placeable area2" parent="." instance=ExtResource("1_g81ut")]
-position = Vector2(344, 408)
-
-[node name="placeable area3" parent="." instance=ExtResource("1_g81ut")]
-position = Vector2(442, 408)
-
-[node name="placeable area4" parent="." instance=ExtResource("1_g81ut")]
-position = Vector2(391, 343)
-
-[node name="placeable area5" parent="." instance=ExtResource("1_g81ut")]
-position = Vector2(537, 320)
-
-[node name="placeable area6" parent="." instance=ExtResource("1_g81ut")]
-position = Vector2(594, 505)
-
-[node name="cards2" parent="." instance=ExtResource("2_sui4g")]
-position = Vector2(704, 400)
-
 [node name="Label" parent="." instance=ExtResource("3_omlem")]
-offset_left = 762.0
-offset_top = 155.0
-offset_right = 802.0
-offset_bottom = 178.0
+offset_left = 789.0
+offset_top = 108.0
+offset_right = 829.0
+offset_bottom = 131.0
+
+[node name="player cards" type="Node" parent="."]
+script = ExtResource("2_8r5wt")
+
+[node name="placeable area5" parent="player cards" instance=ExtResource("1_g81ut")]
+position = Vector2(102, 589)
+
+[node name="placeable area4" parent="player cards" instance=ExtResource("1_g81ut")]
+position = Vector2(118, 458)
+
+[node name="placeable area3" parent="player cards" instance=ExtResource("1_g81ut")]
+position = Vector2(120, 321)
+
+[node name="placeable area2" parent="player cards" instance=ExtResource("1_g81ut")]
+position = Vector2(115, 180)
+
+[node name="placeable area" parent="player cards" instance=ExtResource("1_g81ut")]
+position = Vector2(115, 58)
