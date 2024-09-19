@@ -111,6 +111,9 @@ func get_concept_weight_value(i, j) -> int:
 func _process(delta: float) -> void:
 	#do_test_comparison()
 	pass
+	
+func get_random_card(): 
+	return card_library[randi_range(0,languages.size()-1)][randi_range(0,concepts.size()-1)]
 
 func do_test_comparison():
 	var card1 : CardInfo = card_library[randi_range(0,languages.size()-1)][randi_range(0,concepts.size()-1)]

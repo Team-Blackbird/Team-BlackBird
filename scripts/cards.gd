@@ -1,5 +1,7 @@
 extends Sprite2D
 
+var card_info : CardLibrary.CardInfo
+
 @onready var is_selected = false
 @onready var fallback_pos = position
 @onready var moving_to_fallback = false
@@ -10,6 +12,8 @@ var in_area = null
 
 func _ready():
 	z_index = default_z_index
+	card_info = CardLibrary.get_random_card()
+	print(card_info)
 
 # set card to mouse pos
 func _physics_process(delta):
