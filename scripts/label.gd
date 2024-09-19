@@ -15,4 +15,7 @@ extends Label
 func _process(delta):
 	if right != null and left != null:
 		if right.card != null and left.card != null:
-			print("yo")
+			var points =right.card.card_info.compare(left.card.card_info)
+			self.text = "WP: " + str(points.word_points) + "\n" + "LP: " + str(points.language_points) 
+		else:
+			self.text = ""

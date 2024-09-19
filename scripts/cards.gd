@@ -13,7 +13,6 @@ var in_area = null
 func _ready():
 	z_index = default_z_index
 	card_info = CardLibrary.get_random_card()
-	print(card_info)
 
 # set card to mouse pos
 func _physics_process(delta):
