@@ -13,6 +13,6 @@ extends Label
 #
 
 func _process(delta):
-    if right != null and left != null:
-        if right.card != null and left.card != null:
-            print("yo")
+	if right != null and left != null:
+		if right.card != null and left.card != null:
+			print("yo")
