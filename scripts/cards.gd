@@ -2,6 +2,8 @@ extends Node2D
 
 var card_info : CardLibrary.CardInfo
 
+@export var is_selectable = true
+
 @onready var is_selected = false
 @onready var fallback_pos = position
 @onready var moving_to_fallback = false
@@ -56,7 +58,7 @@ func _physics_process(delta):
 			#is_selected = false
 
 func select():
-	is_selected = true
+	is_selected = true and is_selectable
 	
 func deselect():
 	z_index = default_z_index

@@ -1,56 +1,75 @@
-[gd_scene load_steps=4 format=3 uid="uid://biocmi743oipl"]
+[gd_scene load_steps=5 format=3 uid="uid://biocmi743oipl"]
 
 [ext_resource type="PackedScene" uid="uid://bxelo41vclqw0" path="res://scenes/placeable_area.tscn" id="1_g81ut"]
 [ext_resource type="Script" path="res://scripts/player_cards.gd" id="2_8r5wt"]
+[ext_resource type="Script" path="res://scenes/board.gd" id="3_cu4ck"]
 [ext_resource type="PackedScene" uid="uid://bmfwrtih5tgvl" path="res://scenes/test.tscn" id="3_omlem"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("2_8r5wt")
 
-[node name="Label" parent="." instance=ExtResource("3_omlem")]
-offset_left = 789.0
-offset_top = 108.0
-offset_right = 829.0
-offset_bottom = 131.0
+[node name="CardLayer" type="Node2D" parent="."]
+unique_name_in_owner = true
 
-[node name="player cards" type="Node" parent="."]
+[node name="player cards" type="Node2D" parent="."]
 script = ExtResource("2_8r5wt")
 
 [node name="placeable area5" parent="player cards" instance=ExtResource("1_g81ut")]
-position = Vector2(102, 589)
+position = Vector2(134, 755)
 
 [node name="placeable area4" parent="player cards" instance=ExtResource("1_g81ut")]
-position = Vector2(118, 458)
+position = Vector2(134, 588)
 
 [node name="placeable area3" parent="player cards" instance=ExtResource("1_g81ut")]
-position = Vector2(120, 321)
+position = Vector2(134, 421)
 
 [node name="placeable area2" parent="player cards" instance=ExtResource("1_g81ut")]
-position = Vector2(115, 180)
+position = Vector2(134, 254)
 
 [node name="placeable area" parent="player cards" instance=ExtResource("1_g81ut")]
-position = Vector2(115, 58)
+position = Vector2(134, 86)
 
-[node name="Label2" parent="." instance=ExtResource("3_omlem")]
-offset_left = 767.0
-offset_top = 212.0
-offset_right = 841.0
-offset_bottom = 261.0
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("3_cu4ck")
 
-[node name="Label3" parent="." instance=ExtResource("3_omlem")]
-offset_left = 776.0
-offset_top = 331.0
-offset_right = 850.0
-offset_bottom = 380.0
+[node name="Label" parent="Node2D" instance=ExtResource("3_omlem")]
+offset_left = 1124.0
+offset_top = 84.0
+offset_right = 1198.0
+offset_bottom = 107.0
+metadata/_edit_use_anchors_ = true
 
-[node name="Label4" parent="." instance=ExtResource("3_omlem")]
-offset_left = 780.0
-offset_top = 440.0
-offset_right = 854.0
-offset_bottom = 489.0
+[node name="Label2" parent="Node2D" instance=ExtResource("3_omlem")]
+offset_left = 1124.0
+offset_top = 251.0
+offset_right = 1198.0
+offset_bottom = 300.0
+metadata/_edit_use_anchors_ = true
 
-[node name="Label5" parent="." instance=ExtResource("3_omlem")]
-offset_left = 784.0
-offset_top = 578.0
-offset_right = 858.0
-offset_bottom = 627.0
+[node name="Label3" parent="Node2D" instance=ExtResource("3_omlem")]
+offset_left = 1124.0
+offset_top = 418.0
+offset_right = 1198.0
+offset_bottom = 467.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" parent="Node2D" instance=ExtResource("3_omlem")]
+offset_left = 1124.0
+offset_top = 585.0
+offset_right = 1198.0
+offset_bottom = 634.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label5" parent="Node2D" instance=ExtResource("3_omlem")]
+offset_left = 1124.0
+offset_top = 752.0
+offset_right = 1198.0
+offset_bottom = 801.0
+metadata/_edit_use_anchors_ = true
+
+[node name="FinalLabel" type="Label" parent="Node2D"]
+offset_left = 1139.0
+offset_top = 856.0
+offset_right = 1193.0
+offset_bottom = 879.0
+text = "yayaya"

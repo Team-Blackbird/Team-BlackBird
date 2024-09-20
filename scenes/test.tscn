@@ -11,7 +11,7 @@ text = "yoyoyoyo"
 script = ExtResource("1_rw6tw")
 
 [node name="placeable area" parent="." instance=ExtResource("2_jullo")]
-position = Vector2(-96, 0)
+position = Vector2(-180, 0)
 
 [node name="placeable area2" parent="." instance=ExtResource("2_jullo")]
 position = Vector2(187, 0)
