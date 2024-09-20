@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://blkwiiibsq7ke"]
+
+[ext_resource type="AudioStream" uid="uid://b6lpvsslg0okd" path="res://audio/music/The Tower of Babel v2fixed.mp3" id="1_6gl3u"]
+
+[node name="MusicManager" type="Node2D"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_6gl3u")
+autoplay = true

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cpwxwq55tgxte"]
 
-[ext_resource type="Script" path="res://scripts/audio_manager.gd" id="1_p27j8"]
+[ext_resource type="Script" path="res://scripts/alphabet_audio_manager.gd" id="1_p27j8"]
 
 [sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_5sbqf"]
 

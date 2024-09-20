@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 CardLibrary="*res://scripts/card_library.gd"
 AlphabetAudioManager="*res://scenes/alphabet_audio_manager.tscn"
+MusicManager="*res://scenes/music_manager.tscn"
 
 [rendering]
 
