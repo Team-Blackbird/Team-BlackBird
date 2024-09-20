@@ -1,20 +1,70 @@
 [gd_scene load_steps=4 format=3 uid="uid://botd6krpot750"]
 
-[ext_resource type="Texture2D" uid="uid://bos6mb8lajjl5" path="res://icon.svg" id="1_rfwws"]
+[ext_resource type="Texture2D" uid="uid://c24crmxxpuqx5" path="res://images/Face_Up_Card.png" id="1_3ifsu"]
 [ext_resource type="Script" path="res://scripts/cards.gd" id="2_xcpht"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k3olv"]
-size = Vector2(133, 132)
+size = Vector2(373, 232)
 
-[node name="cards" type="Sprite2D"]
-texture = ExtResource("1_rfwws")
+[node name="cards" type="Node2D"]
 script = ExtResource("2_xcpht")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("1_3ifsu")
+
+[node name="Word" type="RichTextLabel" parent="Sprite2D"]
+offset_left = -1860.0
+offset_top = -820.0
+offset_right = 1860.0
+offset_bottom = -320.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 240
+bbcode_enabled = true
+text = "[center]awdawdfsefefefedawdawd"
+scroll_active = false
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Romanization" type="RichTextLabel" parent="Sprite2D"]
+offset_left = -1860.0
+offset_top = -380.0
+offset_right = 1860.0
+offset_bottom = 120.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.366595, 0.366595, 0.366595, 1)
+theme_override_font_sizes/normal_font_size = 240
+bbcode_enabled = true
+text = "[center]awdawdfsefefefedawdawd"
+scroll_active = false
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Translation" type="RichTextLabel" parent="Sprite2D"]
+offset_left = -1860.0
+offset_top = 300.0
+offset_right = 1860.0
+offset_bottom = 800.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 240
+bbcode_enabled = true
+text = "[center]awdawdfsefefefedawdawd"
+scroll_active = false
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
 [node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(0.7, 0.7)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.5, -1)
+position = Vector2(0.499989, 0)
+scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_k3olv")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

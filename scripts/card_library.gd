@@ -146,6 +146,9 @@ class CardInfo:
 	func _to_string() -> String:
 		return "(" + str(language) + "," + str(concept) + "): " + word + " (" + romanization + ")" + " [" + anglishization + "], meaning " + CardLibrary.get_concept_value(concept) + " in " + CardLibrary.get_language_value(language) + "."
 	
+	func translation() -> String:
+		return CardLibrary.get_concept_value(concept) + " in " + CardLibrary.get_language_value(language)
+	
 	func compare(card_info : CardInfo) -> PointPair:
 		if card_info == null:
 			return PointPair.new(0, 0)
