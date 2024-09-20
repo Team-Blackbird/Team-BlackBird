@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bmfwrtih5tgvl"]
+[gd_scene load_steps=4 format=3 uid="uid://bmfwrtih5tgvl"]
 
 [ext_resource type="Script" path="res://scripts/label.gd" id="1_rw6tw"]
 [ext_resource type="PackedScene" uid="uid://bxelo41vclqw0" path="res://scenes/placeable_area.tscn" id="2_jullo"]
+[ext_resource type="Texture2D" uid="uid://cdu0te5pd33ov" path="res://images/Horizontal_Board_Modual.png" id="2_nx5y8"]
 
 [node name="Label" type="Label"]
 z_index = 100
@@ -10,8 +11,13 @@ offset_bottom = 49.0
 text = "yoyoyoyo"
 script = ExtResource("1_rw6tw")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -101
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_nx5y8")
+
 [node name="placeable area" parent="." instance=ExtResource("2_jullo")]
-position = Vector2(-180, 0)
+position = Vector2(-177, 0)
 
 [node name="placeable area2" parent="." instance=ExtResource("2_jullo")]
-position = Vector2(187, 0)
+position = Vector2(177, 0)
