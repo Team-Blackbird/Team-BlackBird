@@ -1,4 +1,4 @@
-extends Sprite2D
+extends Node2D
 
 var card_info : CardLibrary.CardInfo
 
@@ -8,11 +8,18 @@ var card_info : CardLibrary.CardInfo
 @onready var tolerence = 0.5
 @onready var default_z_index = 1
 
+@onready var word_box = $Sprite2D/Word
+@onready var rom_box = $Sprite2D/Romanization
+@onready var trans_box = $Sprite2D/Translation
+
 var in_area = null
 
 func _ready():
 	z_index = default_z_index
 	card_info = CardLibrary.get_random_card()
+	word_box.text = "[center]" + card_info.word
+	rom_box.text = "[center]" + card_info.romanization
+	trans_box.text = "[center]" + card_info.translation()
 
 # set card to mouse pos
 func _physics_process(delta):
