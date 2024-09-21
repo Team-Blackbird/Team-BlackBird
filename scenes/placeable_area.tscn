@@ -3,11 +3,10 @@
 [ext_resource type="Script" path="res://scripts/placeable_area.gd" id="1_64bvj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tw4cv"]
-size = Vector2(194, 125)
+size = Vector2(264, 166)
 
 [node name="placeable area" type="Area2D"]
 script = ExtResource("1_64bvj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_tw4cv")

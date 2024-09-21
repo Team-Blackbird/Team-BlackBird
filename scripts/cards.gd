@@ -43,12 +43,13 @@ func _physics_process(delta):
 				in_area = null
 
 		if in_area == null and $Area2D.has_overlapping_areas() and not is_selected:
-			var over_area = $Area2D.get_overlapping_areas()[0]
-			if over_area.get("is_placeable_area"):
-				if over_area.is_placeable_area and over_area.card == null:
-					in_area = over_area
-					in_area.card = self
-					fallback_pos = over_area.global_position
+			for over_area in $Area2D.get_overlapping_areas():
+				if over_area.get("is_placeable_area"):
+					if over_area.is_placeable_area and over_area.card == null:
+						in_area = over_area
+						in_area.card = self
+						fallback_pos = over_area.global_position
+						break
 			moving_to_fallback = true
 
 		if not $Area2D.has_overlapping_areas() and not is_selected:

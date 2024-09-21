@@ -15,109 +15,61 @@ unique_name_in_owner = true
 script = ExtResource("2_8r5wt")
 
 [node name="placeable area5" parent="player cards" instance=ExtResource("1_g81ut")]
-position = Vector2(98, 576)
+position = Vector2(134, 755)
 
 [node name="placeable area4" parent="player cards" instance=ExtResource("1_g81ut")]
-position = Vector2(98, 450)
+position = Vector2(134, 588)
 
 [node name="placeable area3" parent="player cards" instance=ExtResource("1_g81ut")]
-position = Vector2(98, 324)
+position = Vector2(134, 421)
 
 [node name="placeable area2" parent="player cards" instance=ExtResource("1_g81ut")]
-position = Vector2(98, 198)
+position = Vector2(134, 254)
 
 [node name="placeable area" parent="player cards" instance=ExtResource("1_g81ut")]
-position = Vector2(98, 72)
-
-[node name="placeable area6" parent="player cards" instance=ExtResource("1_g81ut")]
-position = Vector2(294, 324)
-
-[node name="placeable area7" parent="player cards" instance=ExtResource("1_g81ut")]
-position = Vector2(294, 198)
-
-[node name="placeable area8" parent="player cards" instance=ExtResource("1_g81ut")]
-position = Vector2(294, 72)
-
-[node name="placeable area9" parent="player cards" instance=ExtResource("1_g81ut")]
-position = Vector2(98, 828)
-
-[node name="placeable area10" parent="player cards" instance=ExtResource("1_g81ut")]
-position = Vector2(98, 702)
-
-[node name="placeable area11" parent="player cards" instance=ExtResource("1_g81ut")]
-position = Vector2(294, 828)
-
-[node name="placeable area12" parent="player cards" instance=ExtResource("1_g81ut")]
-position = Vector2(294, 702)
-
-[node name="placeable area13" parent="player cards" instance=ExtResource("1_g81ut")]
-position = Vector2(294, 576)
-
-[node name="placeable area14" parent="player cards" instance=ExtResource("1_g81ut")]
-position = Vector2(294, 450)
-
-[node name="placeable area15" parent="player cards" instance=ExtResource("1_g81ut")]
-position = Vector2(490, 324)
-
-[node name="placeable area16" parent="player cards" instance=ExtResource("1_g81ut")]
-position = Vector2(490, 198)
-
-[node name="placeable area17" parent="player cards" instance=ExtResource("1_g81ut")]
-position = Vector2(490, 72)
-
-[node name="placeable area18" parent="player cards" instance=ExtResource("1_g81ut")]
-position = Vector2(490, 828)
-
-[node name="placeable area19" parent="player cards" instance=ExtResource("1_g81ut")]
-position = Vector2(490, 702)
-
-[node name="placeable area20" parent="player cards" instance=ExtResource("1_g81ut")]
-position = Vector2(490, 576)
-
-[node name="placeable area21" parent="player cards" instance=ExtResource("1_g81ut")]
-position = Vector2(490, 450)
+position = Vector2(134, 86)
 
 [node name="Node2D" type="Node2D" parent="."]
 script = ExtResource("3_cu4ck")
 
 [node name="Label" parent="Node2D" instance=ExtResource("3_omlem")]
-offset_left = 1304.0
-offset_top = 83.0
-offset_right = 1378.0
-offset_bottom = 106.0
+offset_left = 1124.0
+offset_top = 84.0
+offset_right = 1198.0
+offset_bottom = 107.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Label2" parent="Node2D" instance=ExtResource("3_omlem")]
-offset_left = 1304.0
-offset_top = 248.0
-offset_right = 1378.0
-offset_bottom = 297.0
+offset_left = 1124.0
+offset_top = 251.0
+offset_right = 1198.0
+offset_bottom = 300.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Label3" parent="Node2D" instance=ExtResource("3_omlem")]
-offset_left = 1304.0
-offset_top = 413.0
-offset_right = 1378.0
-offset_bottom = 462.0
+offset_left = 1124.0
+offset_top = 418.0
+offset_right = 1198.0
+offset_bottom = 467.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Label4" parent="Node2D" instance=ExtResource("3_omlem")]
-offset_left = 1304.0
-offset_top = 578.0
-offset_right = 1378.0
-offset_bottom = 627.0
+offset_left = 1124.0
+offset_top = 585.0
+offset_right = 1198.0
+offset_bottom = 634.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Label5" parent="Node2D" instance=ExtResource("3_omlem")]
-offset_left = 1304.0
-offset_top = 743.0
-offset_right = 1378.0
-offset_bottom = 792.0
+offset_left = 1124.0
+offset_top = 752.0
+offset_right = 1198.0
+offset_bottom = 801.0
 metadata/_edit_use_anchors_ = true
 
 [node name="FinalLabel" type="Label" parent="Node2D"]
-offset_left = 1308.0
-offset_top = 853.0
-offset_right = 1362.0
-offset_bottom = 876.0
+offset_left = 1139.0
+offset_top = 856.0
+offset_right = 1193.0
+offset_bottom = 879.0
 text = "yayaya"
