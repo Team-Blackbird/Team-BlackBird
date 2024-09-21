@@ -1,9 +1,11 @@
-extends Label
+extends Node2D
 
 var card_scene = preload("res://scenes/cards.tscn")
 
 @onready var right = get_node("placeable area")
 @onready var left = get_node("placeable area2")
+@onready var wp_text = $Label
+@onready var lp_text = $Label2
 @onready var card_layer: Node2D = %CardLayer
 
 func _ready():
@@ -16,9 +18,11 @@ func _ready():
 func _process(delta):
 	var points = get_points()
 	if points != null:
-		self.text = "WP: " + str(points.word_points) + "\n" + "LP: " + str(points.language_points) 
+		wp_text.text = "[center]" + str(points.word_points)
+		lp_text.text = "[center]" + str(points.language_points)
 	else:
-		self.text = ""
+		wp_text.text = ""
+		lp_text.text = ""
 
 
 func get_points():

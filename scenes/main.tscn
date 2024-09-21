@@ -81,43 +81,28 @@ position = Vector2(490, 450)
 script = ExtResource("3_cu4ck")
 
 [node name="Label" parent="Node2D" instance=ExtResource("3_omlem")]
-offset_left = 1304.0
-offset_top = 83.0
-offset_right = 1378.0
-offset_bottom = 106.0
+position = Vector2(1305, 82)
 metadata/_edit_use_anchors_ = true
 
 [node name="Label2" parent="Node2D" instance=ExtResource("3_omlem")]
-offset_left = 1304.0
-offset_top = 248.0
-offset_right = 1378.0
-offset_bottom = 297.0
+position = Vector2(1305, 246)
 metadata/_edit_use_anchors_ = true
 
 [node name="Label3" parent="Node2D" instance=ExtResource("3_omlem")]
-offset_left = 1304.0
-offset_top = 413.0
-offset_right = 1378.0
-offset_bottom = 462.0
+position = Vector2(1305, 410)
 metadata/_edit_use_anchors_ = true
 
 [node name="Label4" parent="Node2D" instance=ExtResource("3_omlem")]
-offset_left = 1304.0
-offset_top = 578.0
-offset_right = 1378.0
-offset_bottom = 627.0
+position = Vector2(1305, 574)
 metadata/_edit_use_anchors_ = true
 
 [node name="Label5" parent="Node2D" instance=ExtResource("3_omlem")]
-offset_left = 1304.0
-offset_top = 743.0
-offset_right = 1378.0
-offset_bottom = 792.0
+position = Vector2(1305, 738)
 metadata/_edit_use_anchors_ = true
 
 [node name="FinalLabel" type="Label" parent="Node2D"]
-offset_left = 1308.0
-offset_top = 853.0
-offset_right = 1362.0
-offset_bottom = 876.0
+offset_left = 1278.0
+offset_top = 833.0
+offset_right = 1332.0
+offset_bottom = 856.0
 text = "yayaya"

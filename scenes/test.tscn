@@ -4,11 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bxelo41vclqw0" path="res://scenes/placeable_area.tscn" id="2_jullo"]
 [ext_resource type="Texture2D" uid="uid://cdu0te5pd33ov" path="res://images/Horizontal_Board_Modual.png" id="2_nx5y8"]
 
-[node name="Label" type="Label"]
+[node name="Label" type="Node2D"]
 z_index = 100
-offset_right = 47.0
-offset_bottom = 49.0
-text = "yoyoyoyo"
 script = ExtResource("1_rw6tw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -21,3 +18,27 @@ position = Vector2(-177, 0)
 
 [node name="placeable area2" parent="." instance=ExtResource("2_jullo")]
 position = Vector2(177, 0)
+
+[node name="Label" type="RichTextLabel" parent="."]
+offset_left = -63.0
+offset_top = -25.0
+offset_right = -5.0
+offset_bottom = 27.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[center]5"
+fit_content = true
+scroll_active = false
+
+[node name="Label2" type="RichTextLabel" parent="."]
+offset_left = 5.0
+offset_top = -25.0
+offset_right = 63.0
+offset_bottom = 27.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[center]5"
+fit_content = true
+scroll_active = false
