@@ -1,9 +1,106 @@
-[gd_scene load_steps=2 format=3 uid="uid://blkwiiibsq7ke"]
+[gd_scene load_steps=7 format=3 uid="uid://blkwiiibsq7ke"]
 
 [ext_resource type="AudioStream" uid="uid://b6lpvsslg0okd" path="res://audio/music/The Tower of Babel v2fixed.mp3" id="1_6gl3u"]
+[ext_resource type="Script" path="res://scripts/music_manager.gd" id="1_oufpq"]
+
+[sub_resource type="Animation" id="Animation_0qx63"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:pitch_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_c2cw6"]
+resource_name = "slow"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:pitch_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.0]
+}
+
+[sub_resource type="Animation" id="Animation_rbfc6"]
+resource_name = "new_animation"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:pitch_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.5, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-6.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k37gc"]
+_data = {
+"RESET": SubResource("Animation_0qx63"),
+"slow": SubResource("Animation_c2cw6"),
+"speed": SubResource("Animation_rbfc6")
+}
 
 [node name="MusicManager" type="Node2D"]
+script = ExtResource("1_oufpq")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_6gl3u")
 autoplay = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AudioStreamPlayer"]
+libraries = {
+"": SubResource("AnimationLibrary_k37gc")
+}

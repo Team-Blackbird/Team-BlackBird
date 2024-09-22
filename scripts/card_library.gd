@@ -112,8 +112,16 @@ func _process(delta: float) -> void:
 	#do_test_comparison()
 	pass
 	
-func get_random_card(): 
-	return card_library[randi_range(0,languages.size()-1)][randi_range(0,concepts.size()-1)]
+func get_random_card():
+	var card = null
+	var lang = -1
+	var concept = -1
+	while card == null:
+		lang = randi_range(0,languages.size()-1)
+		concept = randi_range(0,concepts.size()-1)
+		card = card_library[lang][concept]
+	card_library[lang][concept] = null
+	return card
 
 func do_test_comparison():
 	var card1 : CardInfo = card_library[randi_range(0,languages.size()-1)][randi_range(0,concepts.size()-1)]

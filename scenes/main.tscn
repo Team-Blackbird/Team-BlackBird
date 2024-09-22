@@ -1,9 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://biocmi743oipl"]
+[gd_scene load_steps=11 format=3 uid="uid://biocmi743oipl"]
 
 [ext_resource type="PackedScene" uid="uid://bxelo41vclqw0" path="res://scenes/placeable_area.tscn" id="1_g81ut"]
 [ext_resource type="Script" path="res://scripts/player_cards.gd" id="2_8r5wt"]
 [ext_resource type="Script" path="res://scenes/board.gd" id="3_cu4ck"]
 [ext_resource type="PackedScene" uid="uid://bmfwrtih5tgvl" path="res://scenes/test.tscn" id="3_omlem"]
+[ext_resource type="Texture2D" uid="uid://b8m5ht0c850rm" path="res://images/Button.png" id="5_vpwtr"]
+[ext_resource type="Texture2D" uid="uid://c5yqasqfbqotp" path="res://images/Button_Active.png" id="6_djek4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_51df8"]
+texture = ExtResource("5_vpwtr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_df35c"]
+texture = ExtResource("6_djek4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_82m7p"]
+texture = ExtResource("6_djek4")
+modulate_color = Color(0.5, 0.5, 0.5, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_462pl"]
+texture = ExtResource("6_djek4")
+modulate_color = Color(0.75, 0.75, 0.75, 1)
 
 [node name="main" type="Node2D"]
 script = ExtResource("2_8r5wt")
@@ -101,8 +117,40 @@ position = Vector2(1305, 738)
 metadata/_edit_use_anchors_ = true
 
 [node name="FinalLabel" type="Label" parent="Node2D"]
-offset_left = 1278.0
-offset_top = 833.0
-offset_right = 1332.0
-offset_bottom = 856.0
+offset_left = 1238.0
+offset_top = 834.0
+offset_right = 1372.0
+offset_bottom = 889.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
 text = "yayaya"
+
+[node name="FinalLabel2" type="Label" parent="Node2D"]
+offset_left = 796.0
+offset_top = 834.0
+offset_right = 930.0
+offset_bottom = 889.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "yayaya"
+
+[node name="Button" type="Button" parent="Node2D"]
+offset_left = 1026.0
+offset_top = 837.0
+offset_right = 1233.0
+offset_bottom = 883.0
+theme_override_colors/font_disabled_color = Color(0.370364, 0.370364, 0.370364, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 27
+theme_override_styles/disabled = SubResource("StyleBoxTexture_51df8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_df35c")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_82m7p")
+theme_override_styles/normal = SubResource("StyleBoxTexture_462pl")
+disabled = true
+text = "Speak"
+
+[connection signal="pressed" from="Node2D/Button" to="Node2D" method="_on_button_pressed"]

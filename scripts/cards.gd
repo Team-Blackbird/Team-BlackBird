@@ -14,6 +14,8 @@ var card_info : CardLibrary.CardInfo
 @onready var rom_box = $Sprite2D/Romanization
 @onready var trans_box = $Sprite2D/Translation
 
+var max_speed = 15
+
 var in_area = null
 
 func _ready():
@@ -32,12 +34,12 @@ func _physics_process(delta):
 		if position.distance_to(fallback_pos) < tolerence:
 			moving_to_fallback = false
 		else:
-			position = lerp(position, fallback_pos, 25 * delta)
+			position = lerp(position, fallback_pos, max_speed * delta)
 
 	else:
 		if is_selected:
 			z_index = 10
-			position = lerp(position, get_global_mouse_position(), 25 * delta )
+			position = lerp(position, get_global_mouse_position(), max_speed * delta )
 			if in_area != null:
 				in_area.card = null
 				in_area = null
@@ -58,8 +60,16 @@ func _physics_process(delta):
 		#if not is_selected and not $Area2D.has_overlapping_areas():
 			#is_selected = false
 
+func move_to(new_pos : Vector2):
+	if is_selected:
+		return
+	fallback_pos = new_pos
+	moving_to_fallback = true
+
 func select():
-	is_selected = true and is_selectable
+	is_selected = is_selectable
+	#if is_selected:
+		#AlphabetAudioManager.play_word_high(card_info.anglishization, true)
 	
 func deselect():
 	z_index = default_z_index

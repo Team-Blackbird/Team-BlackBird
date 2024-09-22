@@ -10,6 +10,7 @@ var card_scene = preload("res://scenes/cards.tscn")
 
 func _ready():
 	var card = card_scene.instantiate()
+	right.play_sound = true
 	card.global_position = left.global_position
 	card.is_selectable = false
 	card_layer.add_child(card)
