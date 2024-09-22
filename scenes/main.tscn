@@ -1,11 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://biocmi743oipl"]
+[gd_scene load_steps=13 format=3 uid="uid://biocmi743oipl"]
 
 [ext_resource type="PackedScene" uid="uid://bxelo41vclqw0" path="res://scenes/placeable_area.tscn" id="1_g81ut"]
 [ext_resource type="Script" path="res://scripts/player_cards.gd" id="2_8r5wt"]
+[ext_resource type="Texture2D" uid="uid://cr71a28ja28rx" path="res://images/Door.png" id="2_11l5e"]
 [ext_resource type="Script" path="res://scenes/board.gd" id="3_cu4ck"]
 [ext_resource type="PackedScene" uid="uid://bmfwrtih5tgvl" path="res://scenes/test.tscn" id="3_omlem"]
 [ext_resource type="Texture2D" uid="uid://b8m5ht0c850rm" path="res://images/Button.png" id="5_vpwtr"]
 [ext_resource type="Texture2D" uid="uid://c5yqasqfbqotp" path="res://images/Button_Active.png" id="6_djek4"]
+[ext_resource type="Texture2D" uid="uid://d3abes4ev5dpr" path="res://images/Face_Down_Card.png" id="8_bjq3d"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_51df8"]
 texture = ExtResource("5_vpwtr")
@@ -23,6 +25,12 @@ modulate_color = Color(0.75, 0.75, 0.75, 1)
 
 [node name="main" type="Node2D"]
 script = ExtResource("2_8r5wt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1000
+position = Vector2(800, 450)
+scale = Vector2(0.071, 0.071)
+texture = ExtResource("2_11l5e")
 
 [node name="CardLayer" type="Node2D" parent="."]
 unique_name_in_owner = true
@@ -96,6 +104,40 @@ position = Vector2(490, 450)
 [node name="Node2D" type="Node2D" parent="."]
 script = ExtResource("3_cu4ck")
 
+[node name="WP" type="Label" parent="Node2D"]
+visible = false
+offset_left = 1240.0
+offset_top = -6.0
+offset_right = 1306.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "WP"
+
+[node name="WP2" type="Label" parent="Node2D"]
+visible = false
+offset_left = 1318.0
+offset_top = -6.0
+offset_right = 1384.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "LP"
+
+[node name="Tutorial" type="Label" parent="Node2D"]
+offset_left = 671.0
+offset_top = 128.0
+offset_right = 929.0
+offset_bottom = 608.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "Welcome to the Tower of Babel. Yahweh has just decided that man is too powerful and must be set back. You have lost the ability to understand and speak the common language of man. Try to have a conversation with your fellow man. Good Luck.
+
+To have a conversation, drag words from your vocabulary (left) and place them into the slots on the right. Try to choose words with similar concepts and similar languages to the opposing word. The more similar the concepts and languages are, the more points you will win. If you score enough points, you will advance to the next round, with a harder conversation."
+horizontal_alignment = 1
+autowrap_mode = 3
+justification_flags = 160
+
 [node name="Label" parent="Node2D" instance=ExtResource("3_omlem")]
 position = Vector2(1305, 82)
 metadata/_edit_use_anchors_ = true
@@ -117,22 +159,22 @@ position = Vector2(1305, 738)
 metadata/_edit_use_anchors_ = true
 
 [node name="FinalLabel" type="Label" parent="Node2D"]
-offset_left = 1238.0
-offset_top = 834.0
-offset_right = 1372.0
-offset_bottom = 889.0
+offset_left = 1257.0
+offset_top = 832.0
+offset_right = 1391.0
+offset_bottom = 887.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "yayaya"
 
 [node name="FinalLabel2" type="Label" parent="Node2D"]
-offset_left = 796.0
-offset_top = 834.0
-offset_right = 930.0
-offset_bottom = 889.0
+offset_left = 608.0
+offset_top = 832.0
+offset_right = 989.0
+offset_bottom = 887.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
-text = "yayaya"
+text = "Points to beat: 1000"
 
 [node name="Button" type="Button" parent="Node2D"]
 offset_left = 1026.0
@@ -153,4 +195,72 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_462pl")
 disabled = true
 text = "Speak"
 
+[node name="PlayButton" type="Button" parent="."]
+offset_left = 706.0
+offset_top = 625.0
+offset_right = 893.0
+offset_bottom = 706.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 46
+text = "PLAY"
+
+[node name="Title" type="Label" parent="PlayButton"]
+layout_mode = 0
+offset_left = -33.0
+offset_top = -454.0
+offset_right = 222.0
+offset_bottom = -75.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 65
+text = "THE 
+TOWER 
+OF
+BABEL"
+horizontal_alignment = 1
+
+[node name="Title2" type="Label" parent="PlayButton"]
+layout_mode = 0
+offset_left = -818.0
+offset_top = 142.0
+offset_right = 1008.0
+offset_bottom = 521.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Made by:
+Mark West (Advance): Designer, Sound & Music, Developer
+PurpleWazard: Developer
+ArcadeCrow: Artist"
+horizontal_alignment = 1
+
+[node name="LoseScreen" type="Sprite2D" parent="."]
+visible = false
+z_index = 1000
+position = Vector2(794, 368)
+scale = Vector2(0.207, 0.207)
+texture = ExtResource("8_bjq3d")
+
+[node name="Title" type="Label" parent="LoseScreen"]
+offset_left = -763.285
+offset_top = -681.159
+offset_right = -450.285
+offset_bottom = -302.159
+scale = Vector2(5, 5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 65
+text = "YOU LOSE
+"
+horizontal_alignment = 1
+
+[node name="Title2" type="Label" parent="LoseScreen"]
+offset_left = -1599.03
+offset_top = 333.333
+offset_right = -511.034
+offset_bottom = 712.333
+scale = Vector2(3, 3)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 65
+text = "(refresh browser page to try again)"
+horizontal_alignment = 1
+
 [connection signal="pressed" from="Node2D/Button" to="Node2D" method="_on_button_pressed"]
+[connection signal="pressed" from="PlayButton" to="Node2D" method="_on_play_button_pressed"]

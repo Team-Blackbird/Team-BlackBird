@@ -3,13 +3,14 @@ var card_scene = load("res://scenes/cards.tscn")
 @onready var card_layer = %CardLayer
 
 func _ready():
-	fill_empty()
+	#fill_empty()
+	pass
 
 func fill_empty():
 	for c in get_children():
 		if c.name.contains("placeable") && c.card == null:
 			var card = card_scene.instantiate()
-			self.add_child(card)
+			card_layer.add_child(card)
 			card.fallback_pos = c.position
 			card.position = Vector2(-1000,500)
 

@@ -8,12 +8,17 @@ extends Node2D
 @onready var final_label = $FinalLabel
 @onready var final_label2 = $FinalLabel2
 @onready var button: Button = $Button
+@onready var player_cards: Node2D = $"../player cards"
+@onready var play_button: Button = $"../PlayButton"
+@onready var lose_screen: Sprite2D = $"../LoseScreen"
 
-var points = 50
+
+var points = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	final_label.text = ""
-	final_label2.text = str(points)
+	final_label2.text = ""
+	self.visible = false
 	pass # Replace with function body.
 
 
@@ -41,14 +46,29 @@ func _on_button_pressed() -> void:
 	final_label.text = str(points_sum.word_points) + " X " + str(points_sum.language_points) + " = " + str(points_sum.calculate())
 	clear_board()
 	if points_sum.calculate() < points:
+		get_tree().paused = true
 		MusicManager.slow_down()
-#		show fail state
+		await get_tree().create_timer(1).timeout
+		lose_screen.visible = true
 		return
 	await get_tree().create_timer(3).timeout
-	points += points
-	final_label.text = ""
-	final_label2.text = str(points)
+	start_new_round()
 	
+func start_new_round():
+	points += 50
+	final_label.text = ""
+	final_label2.text = "Points to beat: " + str(points)
+	player_cards.fill_empty()
+	await get_tree().create_timer(0.5).timeout
+	label1.spawn_new_card_left()
+	await get_tree().create_timer(0.5).timeout
+	label2.spawn_new_card_left()
+	await get_tree().create_timer(0.5).timeout
+	label3.spawn_new_card_left()
+	await get_tree().create_timer(0.5).timeout
+	label4.spawn_new_card_left()
+	await get_tree().create_timer(0.5).timeout
+	label5.spawn_new_card_left()
 	
 func clear_board():
 	label1.right.card.move_to(Vector2(label1.right.card.fallback_pos.x, -200))
@@ -71,3 +91,10 @@ func clear_board():
 	label3.left.card = null
 	label4.left.card = null
 	label5.left.card = null
+
+
+func _on_play_button_pressed() -> void:
+	self.visible = true
+	start_new_round()
+	play_button.visible = false
+	pass # Replace with function body.

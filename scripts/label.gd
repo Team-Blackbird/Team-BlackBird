@@ -9,11 +9,8 @@ var card_scene = preload("res://scenes/cards.tscn")
 @onready var card_layer: Node2D = %CardLayer
 
 func _ready():
-	var card = card_scene.instantiate()
 	right.play_sound = true
-	card.global_position = left.global_position
-	card.is_selectable = false
-	card_layer.add_child(card)
+	#spawn_new_card_left()
 	
 
 func _process(delta):
@@ -30,3 +27,12 @@ func get_points():
 	if right != null and left != null and right.card != null && left.card != null:
 		return right.card.card_info.compare(left.card.card_info)
 	return null
+
+func spawn_new_card_left():
+	var card = card_scene.instantiate()
+	card.moving_to_fallback = true
+	card.is_selectable = false
+	card_layer.add_child(card)
+	card.fallback_pos = left.global_position
+	card.position = Vector2(2000, left.global_position.y)
+	AlphabetAudioManager.play_word_low(card.card_info.anglishization)

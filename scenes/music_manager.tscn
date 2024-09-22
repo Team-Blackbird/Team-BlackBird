@@ -94,6 +94,7 @@ _data = {
 }
 
 [node name="MusicManager" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_oufpq")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
