@@ -71,6 +71,10 @@ var card_library_initialized = false
 func _ready() -> void:
 	initialize_cards()
 
+func reset():
+	card_library_initialized = false
+	card_library = create_card_library(do_split(data))
+
 func initialize_cards() -> void:
 	card_library = create_card_library(do_split(data))
 

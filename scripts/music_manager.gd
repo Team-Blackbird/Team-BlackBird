@@ -7,10 +7,12 @@ var playing_slow = false
 func slow_down():
 	if !playing_slow:
 		animation_player.play("slow")
+		playing_slow = true
 
 func speed_up():
 	if playing_slow:
 		animation_player.play("speed")
+		playing_slow = false
 
 func _process(delta: float) -> void:
 	if !audio_stream_player.playing:

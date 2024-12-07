@@ -22,6 +22,10 @@ func _ready() -> void:
 	#play_word_high("thesearesomeactualwordtotestoutthisiswhatthevoicesoundslike")
 	#play_word_low("thesearesomeactualwordtotestoutthisiswhatthevoicesoundslike")
 
+func stop_all():
+	for asp in asplayers:
+		asp.stop()
+	sound_queue = []
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:

@@ -97,4 +97,11 @@ func _on_play_button_pressed() -> void:
 	self.visible = true
 	start_new_round()
 	play_button.visible = false
-	pass # Replace with function body.
+
+func _on_reset_button_pressed() -> void:
+	print("reset")
+	MusicManager.speed_up()
+	AlphabetAudioManager.stop_all()
+	CardLibrary.reset()
+	get_tree().paused = false
+	get_tree().reload_current_scene()

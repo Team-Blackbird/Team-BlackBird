@@ -103,9 +103,11 @@ position = Vector2(490, 576)
 position = Vector2(490, 450)
 
 [node name="Node2D" type="Node2D" parent="."]
+process_mode = 3
 script = ExtResource("3_cu4ck")
 
 [node name="WP" type="Label" parent="Node2D"]
+process_mode = 1
 visible = false
 offset_left = 1240.0
 offset_top = -6.0
@@ -116,6 +118,7 @@ theme_override_font_sizes/font_size = 40
 text = "WP"
 
 [node name="WP2" type="Label" parent="Node2D"]
+process_mode = 1
 visible = false
 offset_left = 1318.0
 offset_top = -6.0
@@ -126,6 +129,7 @@ theme_override_font_sizes/font_size = 40
 text = "LP"
 
 [node name="Tutorial" type="Label" parent="Node2D"]
+process_mode = 1
 offset_left = 671.0
 offset_top = 128.0
 offset_right = 929.0
@@ -141,26 +145,32 @@ autowrap_mode = 3
 justification_flags = 160
 
 [node name="Label" parent="Node2D" instance=ExtResource("3_omlem")]
+process_mode = 1
 position = Vector2(1305, 82)
 metadata/_edit_use_anchors_ = true
 
 [node name="Label2" parent="Node2D" instance=ExtResource("3_omlem")]
+process_mode = 1
 position = Vector2(1305, 246)
 metadata/_edit_use_anchors_ = true
 
 [node name="Label3" parent="Node2D" instance=ExtResource("3_omlem")]
+process_mode = 1
 position = Vector2(1305, 410)
 metadata/_edit_use_anchors_ = true
 
 [node name="Label4" parent="Node2D" instance=ExtResource("3_omlem")]
+process_mode = 1
 position = Vector2(1305, 574)
 metadata/_edit_use_anchors_ = true
 
 [node name="Label5" parent="Node2D" instance=ExtResource("3_omlem")]
+process_mode = 1
 position = Vector2(1305, 738)
 metadata/_edit_use_anchors_ = true
 
 [node name="FinalLabel" type="Label" parent="Node2D"]
+process_mode = 1
 offset_left = 1257.0
 offset_top = 832.0
 offset_right = 1391.0
@@ -171,6 +181,7 @@ theme_override_font_sizes/font_size = 40
 text = "yayaya"
 
 [node name="FinalLabel2" type="Label" parent="Node2D"]
+process_mode = 1
 offset_left = 608.0
 offset_top = 832.0
 offset_right = 989.0
@@ -181,6 +192,7 @@ theme_override_font_sizes/font_size = 40
 text = "Points to beat: 1000"
 
 [node name="Button" type="Button" parent="Node2D"]
+process_mode = 1
 offset_left = 1026.0
 offset_top = 837.0
 offset_right = 1233.0
@@ -241,6 +253,7 @@ ArcadeCrow: Artist"
 horizontal_alignment = 1
 
 [node name="LoseScreen" type="Sprite2D" parent="."]
+process_mode = 3
 visible = false
 z_index = 1000
 position = Vector2(794, 368)
@@ -248,10 +261,10 @@ scale = Vector2(0.207, 0.207)
 texture = ExtResource("8_bjq3d")
 
 [node name="Title" type="Label" parent="LoseScreen"]
-offset_left = -763.285
-offset_top = -681.159
-offset_right = -450.285
-offset_bottom = -302.159
+offset_left = -763.0
+offset_top = -681.0
+offset_right = -450.0
+offset_bottom = -496.0
 scale = Vector2(5, 5)
 theme = ExtResource("5_o24g4")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -260,17 +273,18 @@ text = "YOU LOSE
 "
 horizontal_alignment = 1
 
-[node name="Title2" type="Label" parent="LoseScreen"]
-offset_left = -1599.03
-offset_top = 333.333
-offset_right = -511.034
-offset_bottom = 712.333
-scale = Vector2(3, 3)
+[node name="ResetButton" type="Button" parent="LoseScreen"]
+z_index = 5
+offset_left = -425.121
+offset_top = 300.0
+offset_right = -238.121
+offset_bottom = 381.0
+scale = Vector2(4.825, 4.825)
 theme = ExtResource("5_o24g4")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 65
-text = "(refresh browser page to try again)"
-horizontal_alignment = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 46
+text = "RESET"
 
 [connection signal="pressed" from="Node2D/Button" to="Node2D" method="_on_button_pressed"]
 [connection signal="pressed" from="PlayButton" to="Node2D" method="_on_play_button_pressed"]
+[connection signal="pressed" from="LoseScreen/ResetButton" to="Node2D" method="_on_reset_button_pressed"]
