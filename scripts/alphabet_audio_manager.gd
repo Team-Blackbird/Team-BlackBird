@@ -1,6 +1,6 @@
 extends Node
 
-@onready var asplayer = $AudioStreamPlayer
+@onready var asplayers = [$AudioStreamPlayer, $AudioStreamPlayer2, $AudioStreamPlayer3, $AudioStreamPlayer4, $AudioStreamPlayer5]
 @onready var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 
 @onready var sound_queue = []
@@ -10,6 +10,7 @@ var low_letter_sound_map = {}
 var high_letter_sound_map = {}
 var rate = 6 # num frames between alphabet sounds
 var frame = 0
+var next_asplayer = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -30,8 +31,12 @@ func _physics_process(delta: float) -> void:
 
 func play_next_queued_sound():
 	if sound_queue.size() > 0:
-		if !asplayer.playing: asplayer.play()
-		asplayer.get_stream_playback().play_stream(sound_queue[0], 0, 0, 0.9 + randf_range(0,0.2))
+		var player : AudioStreamPlayer = asplayers[next_asplayer]
+		if player.playing: player.stop()
+		player.stream = sound_queue[0]
+		player.pitch_scale = 0.9 + randf_range(0,0.2)
+		player.play()
+		next_asplayer = posmod(1 + next_asplayer, asplayers.size())
 		sound_queue.remove_at(0)
 
 func play_word_high(s, cut = false):
