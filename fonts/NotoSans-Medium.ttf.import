@@ -1,0 +1,39 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://yo3vaof02pn2"
+path="res://.godot/imported/NotoSans-Medium.ttf-de7e851b74c846de7b54f6c5e9e3029e.fontdata"
+
+[deps]
+
+source_file="res://fonts/NotoSans-Medium.ttf"
+dest_files=["res://.godot/imported/NotoSans-Medium.ttf-de7e851b74c846de7b54f6c5e9e3029e.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+disable_embedded_bitmaps=true
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=1
+oversampling=0.0
+Fallbacks=null
+fallbacks=[Resource("res://fonts/NotoSansHebrew-Medium.ttf"), Resource("res://fonts/NotoSansKR-Medium.ttf"), Resource("res://fonts/NotoSansTC-Medium.ttf"), Resource("res://fonts/NotoSansSC-Medium.ttf")]
+Compress=null
+compress=true
+preload=[{
+"chars": [],
+"glyphs": [],
+"name": "New Configuration",
+"size": Vector2i(16, 0)
+}]
+language_support={}
+script_support={}
+opentype_features={}

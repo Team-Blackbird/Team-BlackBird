@@ -1,0 +1,39 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://bnuf3guwauc6o"
+path="res://.godot/imported/NotoSansTC-Medium.ttf-c8427bf3533e431afc6cba2c4d8fef5e.fontdata"
+
+[deps]
+
+source_file="res://fonts/NotoSansTC-Medium.ttf"
+dest_files=["res://.godot/imported/NotoSansTC-Medium.ttf-c8427bf3533e431afc6cba2c4d8fef5e.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+disable_embedded_bitmaps=true
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=1
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[{
+"chars": [],
+"glyphs": [],
+"name": "New Configuration",
+"size": Vector2i(16, 0)
+}]
+language_support={}
+script_support={}
+opentype_features={}

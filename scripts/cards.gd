@@ -10,9 +10,9 @@ var card_info : CardLibrary.CardInfo
 @onready var tolerence = 0.5
 @onready var default_z_index = 1
 
-@onready var word_box = $Sprite2D/Word
-@onready var rom_box = $Sprite2D/Romanization
-@onready var trans_box = $Sprite2D/Translation
+@onready var word_box = $Word
+@onready var rom_box = $Romanization
+@onready var trans_box = $Translation
 
 var max_speed = 15
 

@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://biocmi743oipl"]
+[gd_scene load_steps=14 format=3 uid="uid://biocmi743oipl"]
 
 [ext_resource type="PackedScene" uid="uid://bxelo41vclqw0" path="res://scenes/placeable_area.tscn" id="1_g81ut"]
 [ext_resource type="Script" path="res://scripts/player_cards.gd" id="2_8r5wt"]
 [ext_resource type="Texture2D" uid="uid://cr71a28ja28rx" path="res://images/Door.png" id="2_11l5e"]
 [ext_resource type="Script" path="res://scenes/board.gd" id="3_cu4ck"]
 [ext_resource type="PackedScene" uid="uid://bmfwrtih5tgvl" path="res://scenes/test.tscn" id="3_omlem"]
+[ext_resource type="Theme" uid="uid://b28uscuaulmih" path="res://themes/main_font_theme.tres" id="5_o24g4"]
 [ext_resource type="Texture2D" uid="uid://b8m5ht0c850rm" path="res://images/Button.png" id="5_vpwtr"]
 [ext_resource type="Texture2D" uid="uid://c5yqasqfbqotp" path="res://images/Button_Active.png" id="6_djek4"]
 [ext_resource type="Texture2D" uid="uid://d3abes4ev5dpr" path="res://images/Face_Down_Card.png" id="8_bjq3d"]
@@ -129,6 +130,7 @@ offset_left = 671.0
 offset_top = 128.0
 offset_right = 929.0
 offset_bottom = 608.0
+theme = ExtResource("5_o24g4")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 14
 text = "Welcome to the Tower of Babel. Yahweh has just decided that man is too powerful and must be set back. You have lost the ability to understand and speak the common language of man. Try to have a conversation with your fellow man. Good Luck.
@@ -163,6 +165,7 @@ offset_left = 1257.0
 offset_top = 832.0
 offset_right = 1391.0
 offset_bottom = 887.0
+theme = ExtResource("5_o24g4")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "yayaya"
@@ -172,6 +175,7 @@ offset_left = 608.0
 offset_top = 832.0
 offset_right = 989.0
 offset_bottom = 887.0
+theme = ExtResource("5_o24g4")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "Points to beat: 1000"
@@ -181,6 +185,7 @@ offset_left = 1026.0
 offset_top = 837.0
 offset_right = 1233.0
 offset_bottom = 883.0
+theme = ExtResource("5_o24g4")
 theme_override_colors/font_disabled_color = Color(0.370364, 0.370364, 0.370364, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -200,6 +205,7 @@ offset_left = 706.0
 offset_top = 625.0
 offset_right = 893.0
 offset_bottom = 706.0
+theme = ExtResource("5_o24g4")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 46
 text = "PLAY"
@@ -210,6 +216,7 @@ offset_left = -33.0
 offset_top = -454.0
 offset_right = 222.0
 offset_bottom = -75.0
+theme = ExtResource("5_o24g4")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 65
 text = "THE 
@@ -224,6 +231,7 @@ offset_left = -818.0
 offset_top = 142.0
 offset_right = 1008.0
 offset_bottom = 521.0
+theme = ExtResource("5_o24g4")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Made by:
@@ -245,6 +253,7 @@ offset_top = -681.159
 offset_right = -450.285
 offset_bottom = -302.159
 scale = Vector2(5, 5)
+theme = ExtResource("5_o24g4")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 65
 text = "YOU LOSE
@@ -257,6 +266,7 @@ offset_top = 333.333
 offset_right = -511.034
 offset_bottom = 712.333
 scale = Vector2(3, 3)
+theme = ExtResource("5_o24g4")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 65
 text = "(refresh browser page to try again)"

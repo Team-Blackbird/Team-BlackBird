@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://botd6krpot750"]
+[gd_scene load_steps=5 format=3 uid="uid://botd6krpot750"]
 
 [ext_resource type="Texture2D" uid="uid://c24crmxxpuqx5" path="res://images/Face_Up_Card.png" id="1_3ifsu"]
 [ext_resource type="Script" path="res://scripts/cards.gd" id="2_xcpht"]
+[ext_resource type="Theme" uid="uid://b28uscuaulmih" path="res://themes/main_font_theme.tres" id="3_v8ayi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k3olv"]
-size = Vector2(265.715, 165.714)
+size = Vector2(188, 118)
 
 [node name="cards" type="Node2D"]
 script = ExtResource("2_xcpht")
@@ -13,14 +14,15 @@ script = ExtResource("2_xcpht")
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("1_3ifsu")
 
-[node name="Word" type="RichTextLabel" parent="Sprite2D"]
-offset_left = -1860.0
-offset_top = -820.0
-offset_right = 1860.0
-offset_bottom = -320.0
+[node name="Word" type="RichTextLabel" parent="."]
+offset_left = -93.0
+offset_top = -41.0
+offset_right = 93.0
+offset_bottom = 1.0
 mouse_filter = 2
+theme = ExtResource("3_v8ayi")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 240
+theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "[center]awdawdfsefefefedawdawd"
 scroll_active = false
@@ -28,14 +30,15 @@ shortcut_keys_enabled = false
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
-[node name="Romanization" type="RichTextLabel" parent="Sprite2D"]
-offset_left = -1860.0
-offset_top = -380.0
-offset_right = 1860.0
-offset_bottom = 120.0
+[node name="Romanization" type="RichTextLabel" parent="."]
+offset_left = -93.0
+offset_top = -19.0
+offset_right = 93.0
+offset_bottom = 23.0
 mouse_filter = 2
+theme = ExtResource("3_v8ayi")
 theme_override_colors/default_color = Color(0.366595, 0.366595, 0.366595, 1)
-theme_override_font_sizes/normal_font_size = 240
+theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "[center]awdawdfsefefefedawdawd"
 scroll_active = false
@@ -43,14 +46,15 @@ shortcut_keys_enabled = false
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
-[node name="Translation" type="RichTextLabel" parent="Sprite2D"]
-offset_left = -1860.0
-offset_top = 300.0
-offset_right = 1860.0
-offset_bottom = 800.0
+[node name="Translation" type="RichTextLabel" parent="."]
+offset_left = -93.0
+offset_top = 15.0
+offset_right = 93.0
+offset_bottom = 57.0
 mouse_filter = 2
+theme = ExtResource("3_v8ayi")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 240
+theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "[center]awdawdfsefefefedawdawd"
 scroll_active = false
@@ -59,11 +63,10 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
 [node name="Area2D" type="Area2D" parent="."]
-scale = Vector2(0.7, 0.7)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1.90735e-05, 2.72478e-06)
+position = Vector2(0, -5.36442e-07)
 scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_k3olv")
 
