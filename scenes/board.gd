@@ -101,7 +101,6 @@ func _on_play_button_pressed() -> void:
 	play_button.visible = false
 
 func _on_reset_button_pressed() -> void:
-	print("reset")
 	MusicManager.speed_up()
 	AlphabetAudioManager.stop_all()
 	CardLibrary.reset()
