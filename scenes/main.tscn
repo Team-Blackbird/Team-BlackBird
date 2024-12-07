@@ -212,7 +212,14 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_462pl")
 disabled = true
 text = "Speak"
 
+[node name="InputBlock" type="ColorRect" parent="Node2D"]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 102
+offset_right = 1600.0
+offset_bottom = 900.0
+
 [node name="PlayButton" type="Button" parent="."]
+z_index = 180
 offset_left = 706.0
 offset_top = 625.0
 offset_right = 893.0

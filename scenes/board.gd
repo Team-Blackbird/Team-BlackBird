@@ -11,6 +11,7 @@ extends Node2D
 @onready var player_cards: Node2D = $"../player cards"
 @onready var play_button: Button = $"../PlayButton"
 @onready var lose_screen: Sprite2D = $"../LoseScreen"
+@onready var input_block: ColorRect = $InputBlock
 
 
 var points = 0
@@ -19,7 +20,6 @@ func _ready() -> void:
 	final_label.text = ""
 	final_label2.text = ""
 	self.visible = false
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -35,6 +35,7 @@ func _process(delta: float) -> void:
 		button.disabled = true
 
 func _on_button_pressed() -> void:
+	input_block.visible = true
 	button.disabled = true
 	var points1 = label1.get_points()
 	var points2 = label2.get_points()
@@ -51,7 +52,7 @@ func _on_button_pressed() -> void:
 		await get_tree().create_timer(1).timeout
 		lose_screen.visible = true
 		return
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(2.5).timeout
 	start_new_round()
 	
 func start_new_round():
@@ -59,6 +60,7 @@ func start_new_round():
 	final_label.text = ""
 	final_label2.text = "Points to beat: " + str(points)
 	player_cards.fill_empty()
+	input_block.visible = false
 	await get_tree().create_timer(0.5).timeout
 	label1.spawn_new_card_left()
 	await get_tree().create_timer(0.5).timeout
